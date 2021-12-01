@@ -3,8 +3,6 @@ import Footer from "./layouts/Footer";
 import Content from "./components/Content";
 
 function App() {
-  
-
   return (
     <div className="App">
       <Navbar />
