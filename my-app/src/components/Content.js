@@ -1,14 +1,50 @@
 import Listitem from "./Listitem";
+import { useState } from "react";
+import { render } from "@testing-library/react";
 
 const Content = () => {
-  const chores = ["items 1", "items 2", "items 3", "items 4"];
+  // let counter=0
+  let [counter, setCounter] = useState(0);
+
+  // console.log(counter)
   return (
     <div className="container">
-      <ul>
-        <Listitem chore="I'm soring" />
-      </ul>
+      <h2>{counter}</h2>
+      <button
+        onClick={() => {
+          // console.log(counter)
+          // counter=counter+1
+          setCounter((previousValue) => {
+            console.log(previousValue);
+            return previousValue+1
+          });
+        }}
+      >
+        clike Me
+      </button>
     </div>
   );
 };
+
+// import { render } from "@testing-library/react";
+// import React from "react";
+
+// class Content extends React.Component{
+//   constructor(){
+//     super()
+//     this.state={
+//       count:0
+//     }
+//   }
+
+//     render() {
+//         return(
+//           <div className="container">
+//             Lorem fgvm mvf vmv cs j nhhfuwfw
+//           </div>
+//         )
+//     }
+
+//   }
 
 export default Content;
