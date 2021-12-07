@@ -1,50 +1,35 @@
-import Listitem from "./Listitem";
 import { useState } from "react";
-import { render } from "@testing-library/react";
 
 const Content = () => {
-  // let counter=0
-  let [counter, setCounter] = useState(0);
+  const [items, setitems] = useState([]);
+  const [value, setValue] = useState('');
 
-  // console.log(counter)
+  const handleSubmit = () => {
+    // setitems((prev) => [...prev]);
+    // console.log(value)
+    // let arr = items
+    // arr.push(value)
+    // console.log(arr)
+    setitems(prev => [...prev,value])
+  };
+
+  const handleInput = (e) => {
+    setValue(e.target.value)
+    // console.log('value change')
+  };
+
   return (
-    <div className="container">
-      <h2>{counter}</h2>
-      <button
-        onClick={() => {
-          // console.log(counter)
-          // counter=counter+1
-          setCounter((previousValue) => {
-            console.log(previousValue);
-            return previousValue+1
-          });
-        }}
-      >
-        clike Me
-      </button>
-    </div>
+    <>
+      <h2>TODO</h2>
+        <input value={value} onChange={handleInput} type="text" />
+        <button onClick={handleSubmit} type="submit">Add</button>
+      <ul>
+        {items.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </>
   );
 };
-
-// import { render } from "@testing-library/react";
-// import React from "react";
-
-// class Content extends React.Component{
-//   constructor(){
-//     super()
-//     this.state={
-//       count:0
-//     }
-//   }
-
-//     render() {
-//         return(
-//           <div className="container">
-//             Lorem fgvm mvf vmv cs j nhhfuwfw
-//           </div>
-//         )
-//     }
-
-//   }
 
 export default Content;
