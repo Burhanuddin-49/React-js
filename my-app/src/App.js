@@ -1,13 +1,23 @@
-import Navbar from "./layouts/Navbar";
-import Footer from "./layouts/Footer";
-import Content from "./components/Content";
+import Home from './components/Home'
+import Login from './components/Login'
+import Signup from './components/Signup'
+import Product from './components/Product'
+import Products from './components/Products'
+import MyOrder from './components/MyOrder'
+import Order from './components/Order'
+import Admin from './components/Admin'
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Content />
-      <Footer />
+    <div>
+      <Home/>
+      <Login/>
+      <Signup/>
+      <Product/>
+      <Products/>
+      <MyOrder/>
+      <Order/>
+      <Admin/>
     </div>
   );
 }
