@@ -7,21 +7,19 @@ import MyOrder from "./components/MyOrder";
 import Order from "./components/Order";
 import Admin from "./components/Admin";
 import Navbar from "./layout/Navbar";
-import { Routes,Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div>
       <Navbar />
-      <Home />
-      <Login />
-      <Signup />
-      <Product />
-      <Products />
-      <MyOrder />
-      <Order />
-      <Admin />
-      {/* <Routes></Routes> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
     </div>
   );
 }
