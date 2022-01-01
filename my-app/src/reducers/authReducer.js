@@ -1,9 +1,8 @@
 const initialState = {
   token: null,
 };
-
-export default function authReducer(state= initialState,action) {
-    cosnt (type,payload) = action
+const authReducer = (state= initialState,action) => {
+    const {type, payload} = action
 
     switch(type){
         default:
@@ -11,3 +10,6 @@ export default function authReducer(state= initialState,action) {
     }
 
 }
+
+
+export default authReducer
