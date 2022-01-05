@@ -1,15 +1,23 @@
 const initialState = {
   token: null,
 };
-const authReducer = (state= initialState,action) => {
-    const {type, payload} = action
+const authReducer = (state = initialState, action) => {
+  const { type, payload } = action;
 
-    switch(type){
-        default:
-            return state
-    }
+  switch (type) {
+    case "LOGIN_SUCCESS":
+      return {
+        ...payload,
+      };
 
-}
+    case "LOGIN_FAILED":
+      return {
+        ...payload,
+      };
 
+    default:
+      return state;
+  }
+};
 
-export default authReducer
+export default authReducer;
